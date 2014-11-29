@@ -7,4 +7,7 @@ ForeverNote.controller('NoteAddController', [
 			NoteService.addNote(this.note);
 			$location.path('/');
 		};
+		$scope.cancel = function () {
+			$location.path('/');
+		};
 	}]);

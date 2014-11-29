@@ -9,4 +9,7 @@ ForeverNote.controller('NoteEditController', [
 			NoteService.editNote(this.note.id, this.note);
 			$location.path('/');
 		};
+		$scope.cancel = function () {
+			$location.path('/');
+		};
 	}]);
