@@ -35,13 +35,14 @@ header {
 	padding: 0px 20px;
 }
 
-header h1 {
+header a h1 {
 	font-size: 20px;
 	display: inline-block;
 	line-height: 50px;
+	color: #fff;
 }
 
-header a {
+header a.addNoteLink {
 	color: #fff;
 	position: absolute;
 	right: 0;
