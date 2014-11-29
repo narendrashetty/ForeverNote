@@ -1,5 +1,6 @@
-<h1>Add note</h1>
-<form onSubmit="return false">
+<!-- <div class="noteAddContainer">
+	<p class="title">Add note</p>
+	<form onSubmit="return false">
 		<label for="title">Title:</label>
 		<div class="input">
 			<input type="text" id="title"  ng-model="note.title" class="xlarge" required>
@@ -18,5 +19,41 @@
 			<input type="text" tag-input="" ng-model="tagText" ng-style="{width: inputWidth}" new-tag="addTag()" delete-tag="deleteTag()">
 
 		</div>
-		<button ng:click="save()" class="btn primary">Save</button> <button ng:click="cancel()" class="btn">Cancel</button>
-</form>
+		
+	</form>
+</div> -->
+
+<div class="noteAddContainer">
+	<p class="title">Add Note</p>
+	<form onSubmit="return false">
+		<div class="addFormContainer">
+			<div class="inputContainer">
+				<label for="title">Title:</label>
+				<input type="text" id="title"  ng-model="note.title" required>
+			</div>
+
+			<div class="inputContainer desc">
+				<label for="description">Description:</label>
+				<textarea id="body" ng-model="note.description" rows="3" required></textarea>
+			</div>
+
+			<div class="inputContainer tags">
+				<label for="description">Tag:</label>
+				<div class="tag-input-ctn">
+					<div class="tagsAddedContainer" style="display:inline-block;float:left;">
+						<div ng-repeat="(key, tag) in note.tags" class="input-tag">
+							{{ tag.name }}
+							<div class="delete-tag" ng-click="deleteTag(key)">&times;</div>
+						</div>
+					</div>
+					<input type="text" tag-input="" ng-model="tagText" class="inputTag" new-tag="addTag()" delete-tag="deleteTag()">
+				</div>
+			</div>
+		</div>
+		<div class="buttonContainer">
+			<button ng:click="cancel()" class="btn">Cancel</button>
+			<button ng:click="save()" class="btn primary">Save</button>
+		</div>
+	</form>
+	
+</div>

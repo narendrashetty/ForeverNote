@@ -3,17 +3,7 @@ ForeverNote.directive('tagInput', function () {
 		restrict: 'A',
 		controller: 'TagsController',
 		link: function($scope, element, attrs) {
-			$scope.inputWidth = 20;
-
-			// Watch for changes in text field
-			$scope.$watch(attrs.ngModel, function(value) {
-				if (value != undefined) {
-					var tempEl = $('<span>' + value + '</span>').appendTo('body');
-					$scope.inputWidth = tempEl.width() + 5;
-					tempEl.remove();
-				}
-			});
-
+			var maxWidth = 490;
 			element.bind('keydown', function(e) {
 				if (e.which == 9) {
 					e.preventDefault();
@@ -31,6 +21,9 @@ ForeverNote.directive('tagInput', function () {
 					e.preventDefault();
 					if ($scope.tagText && $scope.tagText !== '') {
 						$scope.$apply(attrs.newTag);
+						var width = maxWidth - $('.tagsAddedContainer').width();
+						$('.inputTag').css('width', width);
+
 					}
 					return false;
 				}

@@ -4,7 +4,14 @@ ForeverNote.controller('NoteEditController', [
 	'$routeParams',
 	'NoteService',
 	function ($scope, $location, $routeParams, NoteService) {
+		var updateTagInputWidth = function () {
+			setTimeout(function () {
+				var width = 490 - $('.tagsAddedContainer').width();
+				$('.inputTag').css('width', width);
+			}, 10);
+		}
 		$scope.note = NoteService.getNote($routeParams.noteId);
+		updateTagInputWidth();
 		$scope.save = function () {
 			NoteService.editNote(this.note.id, this.note);
 			$location.path('/');
@@ -12,4 +19,6 @@ ForeverNote.controller('NoteEditController', [
 		$scope.cancel = function () {
 			$location.path('/');
 		};
+
+		
 	}]);

@@ -7,6 +7,10 @@ div, header, footer, input, a, li {
 	box-sizing: border-box;
 }
 
+textarea {
+	resize: none;
+}
+
 
 body {
 	font-family: 'Lato', sans-serif;
@@ -62,12 +66,16 @@ header a {
 	outline: 0;
 }
 
+.noteWrapper {
+	text-align: center;
+}
+
 .noteList {
 	list-style-type: none;
 	margin-left: -26px;	
 }
 
-.noteList li {
+.noteList li, .noteAddContainer {
 	display: inline-block;
 	width: 250px;
 	vertical-align: top;
@@ -80,8 +88,100 @@ header a {
 	padding: 14px 10px;
 }
 
+.noteAddContainer {
+	width: 750px;
+	margin-top: 100px;
+	height: 400px;
+	text-align: left;
+	padding-left: 14px;
+	padding-right: 14px;
+}
+
+.noteAddContainer .title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.noteAddContainer .addFormContainer {
+	border: 1px solid #D5D5D5;
+	border-radius: 4px;
+	height: 300px;
+	margin-top: 10px;
+}
+
+.inputContainer {
+	border-bottom: 1px solid #D5D5D5;
+	height: 50px;
+	padding: 0px 20px;
+	color: #515151;
+}
+
+.inputContainer:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.inputContainer.desc {
+	height: 200px;
+	padding: 10px 20px;
+}
+
+.desc label {
+	vertical-align: top;
+}
+
+.inputContainer.tags label {
+	vertical-align: top;
+}
+.inputContainer.tags .inputTag {
+	width: 490px;
+}
+
+.inputContainer label {
+	text-transform: uppercase;
+	font-weight: bold;
+	width: 160px;
+	display: inline-block;
+	height: 100%;
+	line-height: 50px;
+}
+
+.inputContainer input, .inputContainer textarea {
+	border: 1px solid #D5D5D5;
+	height: 30px;
+	width: 500px;
+	font-size: 18px;
+}
+
+.inputContainer textarea {
+	height: 173px;
+}
+
+.buttonContainer {
+	text-align: right;
+	height: 50px;
+	padding-top: 10px;
+	margin-right: -4px;
+}
+
+.buttonContainer button {
+	color: #fff;
+	text-decoration: none;
+	background-color: #3b99b5;
+	padding: 7px 26px;
+	font-size: 14px;
+	border-radius: 3px;
+	border: none;
+	margin: 0 4px;
+	cursor: pointer;
+}
+
+.buttonContainer button:hover {
+	background-color: #286577;
+}
+
 .noteList li .noteContainer {
 	position: relative;
+	text-align: left;
 }
 
 .noteList li .noteContainer .title {
@@ -158,21 +258,18 @@ header a {
 }
 
 .tag-input-ctn {
-	border: 1px solid #ccc;
-	padding: 2px 3px;
+	border: 1px solid #D5D5D5;
 	display: inline-block;
 	width: 500px;
-	border-radius: 3px;
-	box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075);
+	margin-top: 10px;
 }
 
 .tag-input-ctn input {
 	display: inline-block;
 	float: left;
-	height: 18px;
-	padding: 0px;
-	font-size: 13px;
-	line-height: 18px;
+	height: 24px;
+	padding-left: 10px;
+	font-size: 18px;
 	color: black;
 	border: 0px;
 	margin: 2px;
