@@ -7,7 +7,7 @@
 </head>
 
 <body ng-app="ForeverNote">
-	<h1>ForeverNote</h1>
+	<header ng-include="'app/views/header.html'"></header>
 	<div class="container">
 
 		<ng:view></ng:view>
@@ -17,6 +17,7 @@
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script src="app/app.js"></script>
+	<script src="app/controllers/notelistcontroller.js"></script>
 	<script src="app/services/noteservice.js"></script>
 </body>
 </html>

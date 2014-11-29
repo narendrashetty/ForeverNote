@@ -1,1 +1,9 @@
-List of all notes
+<ul>
+	<li ng-repeat="note in notes">
+		<div>
+			<strong>{{ note.title }}</strong>
+			<p>{{ note.description }}</p>
+			<span ng-repeat="tag in note.tags">{{ tag }}</span>
+		</div>
+	</li>
+</ul>
