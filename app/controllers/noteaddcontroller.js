@@ -4,6 +4,7 @@ ForeverNote.controller('NoteAddController', [
 	'NoteService',
 	function ($scope, $location, NoteService) {
 		$scope.save = function () {
+			this.note.tags = this.inputTags;
 			NoteService.addNote(this.note);
 			$location.path('/');
 		};

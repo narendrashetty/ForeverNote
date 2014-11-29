@@ -4,16 +4,15 @@
 	<meta charset="utf-8">
 	<title>ForeverNote</title>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="app/styles/main.css">
 </head>
 
 <body ng-app="ForeverNote">
 	<header ng-include="'app/views/header.html'"></header>
 	<div class="container">
-
 		<ng:view></ng:view>
-
 	</div>
-	
+	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script src="app/app.js"></script>
@@ -22,5 +21,7 @@
 	<script src="app/controllers/noteaddcontroller.js"></script>
 	<script src="app/controllers/noteeditcontroller.js"></script>
 	<script src="app/controllers/notedeletecontroller.js"></script>
+	<script src="app/controllers/tagscontroller.js"></script>
+	<script src="app/directives/tagdirective.js"></script>
 </body>
 </html>

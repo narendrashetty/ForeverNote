@@ -2,28 +2,27 @@ ForeverNote.service('NoteService', function () {
 	// Private variable to store all notes
 	var data = [{
 		id: 1,
-		title: 'note1',
-		description: 'desc1',
-		tags: ['tag1', 'tag2']
+		title: 'narendra',
+		description: 'aaa',
+		tags: [{name: "zzz"}, {name: "bbb"}, {name: "ccc"}]
 	},
 	{
 		id: 2,
-		title: 'note1',
-		description: 'desc1',
-		tags: ['tag1', 'tag2']
+		title: 'rahul',
+		description: 'bbb',
+		tags: [{name: "ddd"},{name: "iii"},{name: "fff"}]
 	},
 	{
 		id: 3,
-		title: 'note1',
-		description: 'desc1',
-		tags: ['tag1', 'tag2']
+		title: 'jijo',
+		description: 'ccc',
+		tags: [{name: "ggg"},{name: "hhh"},{name: "iii"}]
 	}];
 	return {
 		// method to add a new note
 		addNote: function (note) {
 			var id = data.length;
 			note.id = id+1;
-			note.tags = ['tag1', 'tag2'];
 			data.push(note);
 		},
 		// method to delete a note

@@ -1,9 +1,10 @@
+<input type="text" name="query" ng-model="query.tags"/>
 <ul>
-	<li ng-repeat="note in notes">
+	<li ng-repeat="note in notes | filter:query">
 		<div>
 			<strong>{{ note.title }}</strong>
 			<p>{{ note.description }}</p>
-			<span ng-repeat="tag in note.tags">{{ tag }}</span>
+			<span ng-repeat="tag in note.tags">{{ tag.name }}</span>
 			<a ng-href="#/edit/{{note.id}}">Edit Note</a>
 			<a ng-href="#/delete/{{note.id}}">Delete Note</a>
 		</div>
