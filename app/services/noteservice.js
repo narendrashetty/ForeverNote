@@ -28,6 +28,10 @@ ForeverNote.service('NoteService', function () {
 		},
 		// method to delete a note
 		deleteNote: function (id) {
+			var note = this.getNote(id),
+				index = data.indexOf(note);
+
+			data.splice(index, 1);
 
 		},
 		// method to edit a particular note
