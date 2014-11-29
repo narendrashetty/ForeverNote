@@ -1,60 +1,41 @@
 ForeverNote.service('NoteService', function () {
-	// Private variable to store all notes
-	var data = [{
-		id: 1,
-		title: 'narendra',
-		description: 'aaa',
-		tags: [{name: "zzz"}, {name: "bbb"}, {name: "ccc"}]
-	},
-	{
-		id: 2,
-		title: 'rahul',
-		description: 'bbb',
-		tags: [{name: "ddd"},{name: "iii"},{name: "fff"}]
-	},
-	{
-		id: 3,
-		title: 'jijo',
-		description: 'ccc',
-		tags: [{name: "ggg"},{name: "hhh"},{name: "iii"}]
-	}];
+
 	return {
 		// method to add a new note
 		addNote: function (note) {
-			var id = data.length;
-			note.id = id+1;
-			data.push(note);
+			var id = 0;
+			for (var key in localStorage) {
+				if(key.indexOf('ForeverNote_') == 0) {
+					id++;
+				}
+			}
+			note.id = id;
+			localStorage['ForeverNote_' +id] = JSON.stringify(note);
 		},
 		// method to delete a note
 		deleteNote: function (id) {
-			var note = this.getNote(id),
-				index = data.indexOf(note);
-
-			data.splice(index, 1);
-
+			localStorage.removeItem('ForeverNote_'+id);
 		},
 		// method to edit a particular note
 		editNote: function (id, note) {
-			for (var i=0; i < data.length; i++) {
-				if (data[i].id === +id) {
-					data[i] = note;
-					break;
-				}
-			}
-			data[i].id = id;
+			localStorage['ForeverNote_' +id] = JSON.stringify(note);
 		},
 		// method to get a particular note
 		getNote: function (id) {
-			for (var i=0; i < data.length; i++) {
-				if (data[i].id === +id) {
-					return data[i];
-				}
+			if(localStorage['ForeverNote_'+id]) {
+				return JSON.parse(localStorage['ForeverNote_'+id]);
 			}
 			return false;
 		},
 		// method to get all note
 		getAllNotes: function () {
-			return data;
+			var notes = [];
+			for (var note in localStorage) {
+				if(note.indexOf('ForeverNote_') == 0) {
+					notes.push(JSON.parse(localStorage[note]));
+				}
+			}
+			return notes;
 		}
 	}
 });
