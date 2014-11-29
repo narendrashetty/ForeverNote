@@ -1,12 +1,19 @@
-<input type="text" name="query" ng-model="query.tags"/>
-<ul>
+<input type="text" name="query" ng-model="query.title" class="inputSearch" placeholder="Search for notes" />
+<ul class="noteList">
 	<li ng-repeat="note in notes | filter:query">
-		<div>
-			<strong>{{ note.title }}</strong>
-			<p>{{ note.description }}</p>
-			<span ng-repeat="tag in note.tags">{{ tag.name }}</span>
-			<a ng-href="#/edit/{{note.id}}">Edit Note</a>
-			<a ng-href="#/delete/{{note.id}}">Delete Note</a>
+		<div class="noteContainer">
+			<p class="title">{{ note.title }}</p>
+			<p class="description">{{ note.description }}</p>
+			<div class="tagContainer">
+				<span class="tag" ng-repeat="tag in note.tags">{{ tag.name }}</span>
+			</a>
+			<div class="bandContainer">
+				<div class="band"></div>
+			</div>
+			<div class="settingsContainer">
+				<a class="icon-edit-alt" ng-href="#/edit/{{note.id}}"></a>
+				<a class="icon-trash" ng-href="#/delete/{{note.id}}"></a>
+			</div>
 		</div>
 	</li>
 </ul>
