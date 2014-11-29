@@ -1,0 +1,13 @@
+<h1>Add note</h1>
+<form onSubmit="return false">
+		<label for="title">Title:</label>
+		<div class="input">
+			<input type="text" id="title"  ng-model="note.title" class="xlarge" required>
+		</div>
+
+		<label for="body">Body</label>
+		<div class="input">
+			<textarea class="xxlarge" id="body" ng-model="note.body" rows="3" required></textarea>
+		</div>
+		<button ng:click="save()" class="btn primary">Save</button> <button ng:click="cancel()" class="btn">Cancel</button>
+</form>

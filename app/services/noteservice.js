@@ -21,7 +21,10 @@ ForeverNote.service('NoteService', function () {
 	return {
 		// method to add a new note
 		addNote: function (note) {
-
+			var id = data.length;
+			note.id = id;
+			note.tags = ['tag1', 'tag2'];
+			data.push(note);
 		},
 		// method to delete a note
 		deleteNote: function (id) {
