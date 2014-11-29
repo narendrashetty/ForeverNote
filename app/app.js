@@ -7,7 +7,11 @@ ForeverNote.config(['$routeProvider', function ($routeProvider) {
 			controller: 'NoteListController'
 		})
 		.when('/add', {
-			templateUrl: 'app/views/noteAdd.html',
+			templateUrl: 'app/views/noteAddEdit.html',
 			controller: 'NoteAddController'
+		})
+		.when('/edit/:noteId', {
+			templateUrl: 'app/views/noteAddEdit.html',
+			controller: 'NoteEditController'
 		});
 }]);

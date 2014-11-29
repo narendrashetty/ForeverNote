@@ -4,6 +4,7 @@
 			<strong>{{ note.title }}</strong>
 			<p>{{ note.description }}</p>
 			<span ng-repeat="tag in note.tags">{{ tag }}</span>
+			<a ng-href="#/edit/{{note.id}}">Edit Note</a>
 		</div>
 	</li>
 </ul>

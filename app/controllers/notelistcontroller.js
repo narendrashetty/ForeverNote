@@ -1,7 +1,6 @@
 ForeverNote.controller('NoteListController', [
 	'$scope',
-	'$location',
 	'NoteService',
-	function ($scope, $location, NoteService) {
+	function ($scope, NoteService) {
 		$scope.notes = NoteService.getAllNotes();
 	}]);
