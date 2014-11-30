@@ -6,8 +6,10 @@
 <font id="fontello" horiz-adv-x="1000" >
 <font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="left-open" unicode="&#xe800;" d="m0 350l148 149 352 351 148-148-351-352 351-352-148-148-352 352z" horiz-adv-x="648" />
 <glyph glyph-name="edit-alt" unicode="&#xe801;" d="m0-150l0 1000 646 0-164-164-318 0 0-672 672 0 0 319 164 164 0-647-1000 0z m363 363l0 118 6 0q39 2 72-30 39-39 39-88l-117 0z m51 176l367 367 125-125-367-367z m397 397l64 64 125-125-64-64z" horiz-adv-x="1000" />
 <glyph glyph-name="trash" unicode="&#xe802;" d="m0 633l0 141 289 0 0 76 246 0 0-76 289 0 0-141-824 0z m43-783l0 676 738 0 0-676-738 0z" horiz-adv-x="824" />
+<glyph glyph-name="right-open" unicode="&#xe803;" d="m0-2l352 352-352 352 148 148 352-351 148-149-148-148-352-352z" horiz-adv-x="648" />
 </font>
 </defs>
 </svg>

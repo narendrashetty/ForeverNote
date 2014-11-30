@@ -304,6 +304,36 @@ header a.addNoteLink {
 	background-color: #96b4d2;
 }
 
+.pagination {
+	margin-top: 50px;
+}
+
+.pagination ul {
+	list-style-type: none;
+}
+
+.pagination ul li {
+	display: inline-block;
+	background-color: #8C8C8C;
+	border-radius: 50%;
+	padding: 10px;
+	font-size: 14px;
+	margin: 0 10px;
+}
+
+.pagination ul li.disabled {
+	background-color: #D2D2D2;
+}
+
+.pagination ul li.disabled a {
+	cursor: default;
+}
+
+.pagination ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 	.container {
 		width: 768px;
