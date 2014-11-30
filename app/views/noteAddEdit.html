@@ -1,34 +1,26 @@
-<div class="noteAddContainer">
-	<p class="title">Add Note</p>
-	<form onSubmit="return false">
-		<div class="addFormContainer">
-			<div class="inputContainer">
-				<label for="title">Title:</label>
-				<input type="text" id="title"  ng-model="note.title" required>
-			</div>
 
-			<div class="inputContainer desc">
-				<label for="description">Description:</label>
-				<textarea id="body" ng-model="note.description" rows="3" required></textarea>
-			</div>
+<form onSubmit="return false">
+	<div class="inputContainer">
+		<input type="text" id="title"  ng-model="note.title" placeholder="Add your title here">
+	</div>
 
-			<div class="inputContainer tags">
-				<label for="description">Tag:</label>
-				<div class="tag-input-ctn">
-					<div class="tagsAddedContainer" style="display:inline-block;float:left;">
-						<div ng-repeat="(key, tag) in note.tags" class="input-tag">
-							{{ tag.name }}
-							<div class="delete-tag" ng-click="deleteTag(key)">&times;</div>
-						</div>
-					</div>
-					<input type="text" tag-input="" ng-model="tagText" class="inputTag" new-tag="addTag()" delete-tag="deleteTag()">
+	<div class="inputContainer desc">
+		<textarea id="body" ng-model="note.description" rows="3" placeholder="This is where you start typing"></textarea>
+	</div>
+
+	<div class="inputContainer tags">
+		<div class="tag-input-ctn">
+			<div class="tagsAddedContainer" style="display:inline-block;float:left;">
+				<div ng-repeat="(key, tag) in note.tags" class="input-tag">
+					{{ tag.name }}
+					<div class="delete-tag" ng-click="deleteTag(key)">&times;</div>
 				</div>
 			</div>
+			<input type="text" tag-input="" ng-model="tagText" placeholder="Type and press Tab to add Tags" class="inputTag" new-tag="addTag()" delete-tag="deleteTag()" >
 		</div>
-		<div class="buttonContainer">
-			<button ng:click="cancel()" class="btn">Cancel</button>
-			<button ng:click="save()" class="btn primary">Save</button>
-		</div>
-	</form>
-	
-</div>
+	</div>
+	<div class="buttonContainer">
+		<button ng:click="save()">Save note</button>
+		<a class="cancelBtn" href ng:click="cancel()">Cancel</a>
+	</div>
+</form>

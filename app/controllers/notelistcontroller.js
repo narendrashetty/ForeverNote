@@ -1,48 +1,47 @@
 ForeverNote.controller('NoteListController', [
     '$scope',
+    '$location',
     'NoteService',
-    function($scope, NoteService) {
-        $scope.notesPerPage = 9;
-        $scope.currentPage = 0;
+    function($scope, $location, NoteService) {
         $scope.notes = NoteService.getAllNotes();
-        $scope.filtered = $scope.notes;
-
-        $scope.prevPage = function() {
-            if ($scope.currentPage > 0) {
-                $scope.currentPage--;
-            }
+        $scope.displayNote = function (noteId) {
+            $scope.selectedNoteId = noteId;
+            $location.path('/note/' + noteId);
         };
 
-        $scope.prevPageDisabled = function() {
-            return $scope.currentPage === 0 ? "disabled" : "";
-        };
 
-        $scope.pageCount = function() {
-            return Math.ceil($scope.filtered.length / $scope.notesPerPage) - 1;
-        };
+        // $scope.filtered = $scope.notes;
 
-        $scope.nextPage = function() {
-            if ($scope.currentPage < $scope.pageCount()) {
-                $scope.currentPage++;
-            }
-        };
+        // $scope.prevPage = function() {
+        //     if ($scope.currentPage > 0) {
+        //         $scope.currentPage--;
+        //     }
+        // };
 
-        $scope.nextPageDisabled = function() {
-            return $scope.currentPage === $scope.pageCount() ? "disabled" : "";
-        };
+        // $scope.prevPageDisabled = function() {
+        //     return $scope.currentPage === 0 ? "disabled" : "";
+        // };
 
-        $scope.setPage = function(n) {
-            $scope.currentPage = n;
-        };
+        // $scope.pageCount = function() {
+        //     return Math.ceil($scope.filtered.length / $scope.notesPerPage) - 1;
+        // };
 
-        $scope.$watch('query.title', function(val) {
-            $scope.currentPage = 0;
-        });
+        // $scope.nextPage = function() {
+        //     if ($scope.currentPage < $scope.pageCount()) {
+        //         $scope.currentPage++;
+        //     }
+        // };
 
-        $scope.modalShown = false;
-        $scope.toggleModal = function(noteId) {
-        	$scope.deleteNoteId = noteId;
-            $scope.modalShown = !$scope.modalShown;
-        };
+        // $scope.nextPageDisabled = function() {
+        //     return $scope.currentPage === $scope.pageCount() ? "disabled" : "";
+        // };
+
+        // $scope.setPage = function(n) {
+        //     $scope.currentPage = n;
+        // };
+
+        // $scope.$watch('query.title', function(val) {
+        //     $scope.currentPage = 0;
+        // });        
     }
 ]);

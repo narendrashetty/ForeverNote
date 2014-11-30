@@ -6,23 +6,34 @@
 	<title>ForeverNote</title>
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="app/assets/css/fontello.css">
-	<link rel="stylesheet" href="app/assets/css/main.css">
+	<!-- <link rel="stylesheet" href="app/assets/css/main.css"> -->
+	<link rel="stylesheet" href="app/assets/css/newmain.css">
 </head>
 
 <body ng-app="ForeverNote">
-	<header ng-include="'app/views/header.html'"></header>
-	<div class="container noteWrapper">
-		<ng:view></ng:view>
+	<!-- <header ng-include="'app/views/header.html'"></header> -->
+
+	<!-- <div class="container noteWrapper">
+		<div ng-view></div>
 	</div>
 	
-	<footer ng-include="'app/views/footer.html'"></footer>
+	<footer ng-include="'app/views/footer.html'"></footer> -->
+
+	<div class="fluid-container">
+		<div class="noteBrowser" ng-controller="NoteListController" ng-include="'app/views/notebrowser.html'"></div>
+		<div class="noteViewer">
+			<ng:view></ng:view>
+		</div>
+	</div>
 
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/masonry/dist/masonry.pkgd.min.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script src="app/app.js"></script>
 	<script src="app/services/noteservice.js"></script>
 	<script src="app/controllers/notelistcontroller.js"></script>
+	<script src="app/controllers/noteviewercontroller.js"></script>
 	<script src="app/controllers/noteaddcontroller.js"></script>
 	<script src="app/controllers/noteeditcontroller.js"></script>
 	<script src="app/controllers/notedeletecontroller.js"></script>

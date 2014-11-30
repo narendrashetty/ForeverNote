@@ -1,6 +1,13 @@
-<div class="noteViewer">
-    <p class="title"> {{ selectedNote.title }}</p>
-    <p class="description">{{ selectedNote.description }}</p>
+
+<div class="noteControls" ng:class="{true:'', false:'hide'}[selectedNote]">
+
+    <a href ng-href="#/edit/{{selectedNote.id}}" class="editLink">Edit</a>
+    <a href class="deleteLink" ng-click="toggleModal(selectedNote.id)">Delete</a>
+</div>
+<p class="title"> {{ selectedNote.title }}</p>
+<p class="description">{{ selectedNote.description }}</p>
+<div class="tagContainer">
+    <span class="noteTag" ng-repeat="tag in selectedNote.tags">{{ tag.name }}</span>
 </div>
 
 
@@ -33,8 +40,9 @@
             <a class="icon-right-open" href ng-click="nextPage()"></a>
         </li>
     </ul>
-</div>
+</div> -->
 <modal-dialog show='modalShown' width='750px' height='60%'>
     <p class="title">Are you Sure, you wanna delete ?</p>
     <a ng-href="#/delete/{{deleteNoteId}}" class="deleteNote">Delete</a>
-</modal-dialog> -->
+    <a href="" class="cancelBtn cancelDelete" ng-click="toggleModal()">Cancel</a>
+</modal-dialog> 

@@ -6,8 +6,8 @@ ForeverNote.controller('NoteAddController', [
 		$scope.note = {};
 		$scope.note.tags = [];
 		$scope.save = function () {
-			NoteService.addNote(this.note);
-			$location.path('/');
+			var noteId = NoteService.addNote(this.note);
+			$location.path('/note/' + noteId);
 		};
 		$scope.cancel = function () {
 			$location.path('/');

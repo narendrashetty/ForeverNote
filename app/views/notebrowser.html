@@ -1,0 +1,16 @@
+<div class="ForeverNoteTitle">
+	<p>ForeverNote</p>
+	<a class="addIcon" ng-href="#/add/">
+		<span></span>
+	</a>
+</div>
+<div class="noteListContainer">
+	<ul class="noteList">
+		<li class="note" ng-repeat="note in notes" ng-click="displayNote(note.id)" ng:class="{true:'active', false:''}[selectedNoteId===note.id]">
+			<p class="title">{{ note.title }}</p>
+			<p class="description">
+				{{ note.description }}
+			</p>
+		</li>
+	</ul>
+</div>

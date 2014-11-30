@@ -13,6 +13,7 @@ ForeverNote.service('NoteService', function () {
 			}
 			note.id = ++id;
 			localStorage['ForeverNote_' +id] = JSON.stringify(note);
+			return id;
 		},
 		// method to delete a note
 		deleteNote: function (id) {

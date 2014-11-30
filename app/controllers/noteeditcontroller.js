@@ -14,7 +14,7 @@ ForeverNote.controller('NoteEditController', [
 		updateTagInputWidth();
 		$scope.save = function () {
 			NoteService.editNote(this.note.id, this.note);
-			$location.path('/');
+			$location.path('/note/' + this.note.id);
 		};
 		$scope.cancel = function () {
 			$location.path('/');
