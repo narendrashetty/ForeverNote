@@ -3,13 +3,15 @@ ForeverNote.service('NoteService', function () {
 	return {
 		// method to add a new note
 		addNote: function (note) {
-			var id = 0;
+			var id = 0,
+				tempId = 0;
 			for (var key in localStorage) {
 				if(key.indexOf('ForeverNote_') == 0) {
-					id++;
+					tempId = +key.match(/\d+$/)[0];
+					id = (id < tempId) ? tempId : id;
 				}
 			}
-			note.id = id;
+			note.id = ++id;
 			localStorage['ForeverNote_' +id] = JSON.stringify(note);
 		},
 		// method to delete a note

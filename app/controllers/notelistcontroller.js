@@ -2,7 +2,7 @@ ForeverNote.controller('NoteListController', [
 	'$scope',
 	'NoteService',
 	function ($scope, NoteService) {
-		$scope.notesPerPage = 2;
+		$scope.notesPerPage = 9;
 		$scope.currentPage = 0;
 		$scope.notes = NoteService.getAllNotes();
 		$scope.filtered = $scope.notes;		
