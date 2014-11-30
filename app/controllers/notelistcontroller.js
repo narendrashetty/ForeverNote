@@ -1,40 +1,47 @@
 ForeverNote.controller('NoteListController', [
-	'$scope',
-	'NoteService',
-	function ($scope, NoteService) {
-		$scope.notesPerPage = 9;
-		$scope.currentPage = 0;
-		$scope.notes = NoteService.getAllNotes();
-		$scope.filtered = $scope.notes;		
-		$scope.prevPage = function() {
-			if ($scope.currentPage > 0) {
-				$scope.currentPage--;
-			}
-		};
+    '$scope',
+    'NoteService',
+    function($scope, NoteService) {
+        $scope.notesPerPage = 9;
+        $scope.currentPage = 0;
+        $scope.notes = NoteService.getAllNotes();
+        $scope.filtered = $scope.notes;
 
-		$scope.prevPageDisabled = function() {
-			return $scope.currentPage === 0 ? "disabled" : "";
-		};
+        $scope.prevPage = function() {
+            if ($scope.currentPage > 0) {
+                $scope.currentPage--;
+            }
+        };
 
-		$scope.pageCount = function() {
-			return Math.ceil($scope.filtered.length/$scope.notesPerPage)-1;
-		};
+        $scope.prevPageDisabled = function() {
+            return $scope.currentPage === 0 ? "disabled" : "";
+        };
 
-		$scope.nextPage = function() {
-			if ($scope.currentPage < $scope.pageCount()) {
-				$scope.currentPage++;
-			}
-		};
+        $scope.pageCount = function() {
+            return Math.ceil($scope.filtered.length / $scope.notesPerPage) - 1;
+        };
 
-		$scope.nextPageDisabled = function() {
-			return $scope.currentPage === $scope.pageCount() ? "disabled" : "";
-		};
+        $scope.nextPage = function() {
+            if ($scope.currentPage < $scope.pageCount()) {
+                $scope.currentPage++;
+            }
+        };
 
-		$scope.setPage = function(n) {
-			$scope.currentPage = n;
-		};
+        $scope.nextPageDisabled = function() {
+            return $scope.currentPage === $scope.pageCount() ? "disabled" : "";
+        };
 
-		$scope.$watch('query.title', function (val) {
-			$scope.currentPage = 0;
-		});
-	}]);
+        $scope.setPage = function(n) {
+            $scope.currentPage = n;
+        };
+
+        $scope.$watch('query.title', function(val) {
+            $scope.currentPage = 0;
+        });
+
+        $scope.modalShown = false;
+        $scope.toggleModal = function() {
+            $scope.modalShown = !$scope.modalShown;
+        };
+    }
+]);

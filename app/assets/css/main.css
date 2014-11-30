@@ -2,435 +2,486 @@
 -----   Reset   -----
 ------------------------------------------*/
 
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}.clearfix:before,.clearfix:after{content:" ";display:table;}.clearfix:after {clear:both;}html,body{height:100%;overflow-x:hidden;}
-div, header, footer, input, a, li {
-	box-sizing: border-box;
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent
 }
-
-textarea {
-	resize: none;
-}
-
-
 body {
-	font-family: 'Lato', sans-serif;
-	font-size: 14px;
-	line-height: 1.42857143;
-	color: #333;
-	background-color: #f3f7f8;
+    line-height: 1
 }
-
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block
+}
+nav ul {
+    list-style: none
+}
+blockquote, q {
+    quotes: none
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: none
+}
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent
+}
+ins {
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none
+}
+mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold
+}
+del {
+    text-decoration: line-through
+}
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0
+}
+input, select {
+    vertical-align: middle
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+div, header, footer, input, a, li {
+    box-sizing: border-box;
+}
+textarea {
+    resize: none;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #f3f7f8;
+}
 input, textarea {
-	font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
-
-.container  {
-	position: relative;
-	width: 960px;
-	margin: 0 auto;
-	padding: 0;
+.container {
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
 }
-
+.hide {
+    display: none;
+}
 header {
-	background-color: #202020;
-	height: 50px;
-	width: 100%;
-	color: #fff;
-	padding: 0px 20px;
+    background-color: #202020;
+    height: 50px;
+    width: 100%;
+    color: #fff;
+    padding: 0px 20px;
 }
-
 header a h1 {
-	font-size: 20px;
-	display: inline-block;
-	line-height: 50px;
-	color: #fff;
+    font-size: 20px;
+    display: inline-block;
+    line-height: 50px;
+    color: #fff;
 }
-
 header a.addNoteLink {
-	color: #fff;
-	position: absolute;
-	right: 20px;
-	top: 12px;
-	text-decoration: none;
-	background-color: #3b99b5;
-	padding: 4px 10px;
-	font-size: 12px;
-	border-radius: 3px;
+    color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    text-decoration: none;
+    background-color: #3b99b5;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 3px;
 }
-
 .inputSearch {
-	position: absolute;
-	top: -38px;
-	right: 130px;
-	background-color: #464646;
-	border: 0;
-	height: 25px;
-	color: #696969;
-	border-radius: 2px;
-	padding-left: 10px;
-	outline: 0;
+    position: absolute;
+    top: -38px;
+    right: 130px;
+    background-color: #464646;
+    border: 0;
+    height: 25px;
+    color: #696969;
+    border-radius: 2px;
+    padding-left: 10px;
+    outline: 0;
 }
-
 .noteWrapper {
-	text-align: center;
-	margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 91px;
 }
-
 .noteList {
-	list-style-type: none;
-	margin-left: -26px;	
+    list-style-type: none;
+    margin-left: -26px;
 }
-
 .noteList li, .noteAddContainer {
-	display: inline-block;
-	background-color: #fff;
-	margin-top: 26px;
-	box-shadow: 1px 0px 4px #9E9E9E;		
-	border-radius: 4px;
-	min-height: 180px;
-	padding: 14px 10px;
-	vertical-align: top;
+    display: inline-block;
+    background-color: #fff;
+    margin-top: 26px;
+    box-shadow: 1px 0px 4px #9E9E9E;
+    border-radius: 4px;
+    min-height: 180px;
+    padding: 14px 10px;
+    vertical-align: top;
     margin-bottom: 20px;
     margin-left: 26px;
     width: 250px;
-
 }
-
 .noteAddContainer {
-	width: 750px;
-	margin-top: 100px;
-	height: 400px;
-	text-align: left;
-	padding-left: 14px;
-	padding-right: 14px;
+    width: 750px;
+    margin-top: 100px;
+    height: 400px;
+    text-align: left;
+    padding-left: 14px;
+    padding-right: 14px;
 }
-
 .noteAddContainer .title {
-	font-size: 20px;
-	font-weight: bold;
+    font-size: 20px;
+    font-weight: bold;
 }
-
 .noteAddContainer .addFormContainer {
-	border: 1px solid #D5D5D5;
-	border-radius: 4px;
-	height: 300px;
-	margin-top: 10px;
+    border: 1px solid #D5D5D5;
+    border-radius: 4px;
+    height: 300px;
+    margin-top: 10px;
 }
-
 .inputContainer {
-	border-bottom: 1px solid #D5D5D5;
-	height: 50px;
-	padding: 0px 20px;
-	color: #515151;
+    border-bottom: 1px solid #D5D5D5;
+    height: 50px;
+    padding: 0px 20px;
+    color: #515151;
 }
-
 .inputContainer:nth-child(even) {
-	background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
-
 .inputContainer.desc {
-	height: 200px;
-	padding: 10px 20px;
+    height: 200px;
+    padding: 10px 20px;
 }
-
 .desc label {
-	vertical-align: top;
+    vertical-align: top;
 }
-
 .inputContainer.tags label {
-	vertical-align: top;
+    vertical-align: top;
 }
 .inputContainer.tags .inputTag {
-	width: 490px;
+    width: 490px;
 }
-
 .inputContainer label {
-	text-transform: uppercase;
-	font-weight: bold;
-	width: 160px;
-	display: inline-block;
-	height: 100%;
-	line-height: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 160px;
+    display: inline-block;
+    height: 100%;
+    line-height: 50px;
 }
-
 .inputContainer input, .inputContainer textarea {
-	border: 1px solid #D5D5D5;
-	height: 30px;
-	width: 500px;
-	font-size: 18px;
+    border: 1px solid #D5D5D5;
+    height: 30px;
+    width: 500px;
+    font-size: 18px;
 }
-
 .inputContainer textarea {
-	height: 173px;
+    height: 173px;
 }
-
 .buttonContainer {
-	text-align: right;
-	height: 50px;
-	padding-top: 10px;
-	margin-right: -4px;
+    text-align: right;
+    height: 50px;
+    padding-top: 10px;
+    margin-right: -4px;
 }
-
 .buttonContainer button {
-	color: #fff;
-	text-decoration: none;
-	background-color: #3b99b5;
-	padding: 7px 26px;
-	font-size: 14px;
-	border-radius: 3px;
-	border: none;
-	margin: 0 4px;
-	cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    background-color: #3b99b5;
+    padding: 7px 26px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: none;
+    margin: 0 4px;
+    cursor: pointer;
 }
-
 .buttonContainer button:hover {
-	background-color: #286577;
+    background-color: #286577;
 }
-
 .noteList li .noteContainer {
-	position: relative;
-	text-align: left;
+    position: relative;
+    text-align: left;
 }
-
 .noteList li .noteContainer .title {
-	font-weight: bold;
-	font-size: 16px;
+    font-weight: bold;
+    font-size: 16px;
 }
-
 .noteList li .noteContainer .description {
-	color: #8b95ad;
-	margin-top: 4px;
+    color: #8b95ad;
+    margin-top: 4px;
 }
-
 .noteList li .noteContainer .tagContainer {
-	margin-top: 10px;
+    margin-top: 10px;
 }
-
 .noteList li .noteContainer .tagContainer .tag {
-	background: #767676;
-	font-size: 10px;
-	padding: 3px 8px;
-	margin-right: 1px;
-	border-radius: 10px;
-	color: #fff;
+    background: #767676;
+    font-size: 10px;
+    padding: 3px 8px;
+    margin-right: 1px;
+    border-radius: 10px;
+    color: #fff;
 }
-
 .noteList li .noteContainer .bandContainer {
-	position: relative;
-	margin-top: 18px;
-	height: 4px;
+    position: relative;
+    margin-top: 18px;
+    height: 4px;
 }
-
 .noteList li .noteContainer .bandContainer .band {
-	height: 4px;
-	background: #2094b8;
-	border-radius: 6px;
-	width: 90px;
-	position: absolute;
+    height: 4px;
+    background: #2094b8;
+    border-radius: 6px;
+    width: 90px;
+    position: absolute;
 }
-
 .noteList li .noteContainer .bandContainer .band:after {
-	content: " ";
-	background: #ed8c39;
-	border-radius: 6px;
-	width: 70px;
-	height: 4px;
-	position: absolute;
-	top: 0;
-	left: 87px;
+    content: " ";
+    background: #ed8c39;
+    border-radius: 6px;
+    width: 70px;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 87px;
 }
-
 .noteList li .noteContainer .bandContainer .band:before {
-	content: " ";
-	background: #7ec479;
-	border-radius: 6px;
-	width: 76px;
-	height: 4px;
-	position: absolute;
-	top: 0;
-	left: 154px;
+    content: " ";
+    background: #7ec479;
+    border-radius: 6px;
+    width: 76px;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    left: 154px;
 }
-
 .noteList li .noteContainer .settingsContainer {
-	display: inline;
-	float: right;
-	margin-top: 5px;
+    display: inline;
+    float: right;
+    margin-top: 5px;
 }
-
 .noteList li .noteContainer .settingsContainer a {
-	color: #777777;
+    color: #777777;
 }
-
 .noteList li .noteContainer .settingsContainer a:hover {
-	color: #000;
+    color: #000;
 }
-
 .tag-input-ctn {
-	border: 1px solid #D5D5D5;
-	display: inline-block;
-	width: 500px;
-	margin-top: 10px;
+    border: 1px solid #D5D5D5;
+    display: inline-block;
+    width: 500px;
+    margin-top: 10px;
 }
-
 .tag-input-ctn input {
-	display: inline-block;
-	float: left;
-	height: 24px;
-	padding-left: 10px;
-	font-size: 18px;
-	color: black;
-	border: 0px;
-	margin: 2px;
+    display: inline-block;
+    float: left;
+    height: 24px;
+    padding-left: 10px;
+    font-size: 18px;
+    color: black;
+    border: 0px;
+    margin: 2px;
 }
-
 .tag-input-ctn input:focus {
-	outline: 0;
-	box-shadow: 0px;
+    outline: 0;
+    box-shadow: 0px;
 }
-
 .tag-input-ctn .input-tag {
-	padding: 2px 4px;
-	line-height: 12px;
-	font-size: 11px;
-	background-color: #e3eaf6;
-	display: inline-block;
-	float: left;
-	border-radius: 2px;
-	margin: 2px 5px 2px 0px;
-	border: 1px solid #a9b6d2;
+    padding: 2px 4px;
+    line-height: 12px;
+    font-size: 11px;
+    background-color: #e3eaf6;
+    display: inline-block;
+    float: left;
+    border-radius: 2px;
+    margin: 2px 5px 2px 0px;
+    border: 1px solid #a9b6d2;
 }
-
 .tag-input-ctn .input-tag .delete-tag {
-	display: inline-block;
-	font-size: 12px;
-	cursor: pointer;
-	padding: 0px 2px;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0px 2px;
 }
-
 .tag-input-ctn .input-tag .delete-tag:hover {
-	background-color: #96b4d2;
+    background-color: #96b4d2;
 }
-
 .pagination {
-	margin-top: 50px;
+    margin-top: 50px;
 }
-
 .pagination ul {
-	list-style-type: none;
+    list-style-type: none;
 }
-
 .pagination ul li {
-	display: inline-block;
-	background-color: #8C8C8C;
-	border-radius: 50%;
-	padding: 10px;
-	font-size: 14px;
-	margin: 0 10px;
+    display: inline-block;
+    background-color: #8C8C8C;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 14px;
+    margin: 0 10px;
 }
-
 .pagination ul li.disabled {
-	background-color: #D2D2D2;
+    background-color: #D2D2D2;
 }
-
 .pagination ul li.disabled a {
-	cursor: default;
+    cursor: default;
 }
-
 .pagination ul li a {
-	color: #fff;
-	text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
-
 footer {
-	border-top: 1px solid #CACACA;
-	background-color: #E5E5E5;
+    border-top: 1px solid #CACACA;
+    background-color: #E5E5E5;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    margin-top: -61px;
 }
-
 footer .container {
-	padding: 10px;
-	text-align: center;
+    padding: 10px;
+    text-align: center;
 }
-
 footer .container a {
-	color: #000;
-	text-decoration: none;
-	border-bottom: 1px solid #CACACA;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #CACACA;
 }
-
+.ng-modal-dialog {
+    z-index: 10000;
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 4px 4px 80px #000;
+}
+.ng-modal-dialog-content {
+    padding: 10px;
+    text-align: left;
+}
+.ng-modal-close {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 120%;
+    display: inline-block;
+    font-weight: bold;
+    font-family: 'arial', 'sans-serif';
+}
 @media only screen and (min-width: 768px) and (max-width: 959px) {
-	.container {
-		width: 768px;
-	}
+    .container {
+        width: 768px;
+    }
 }
-
 @media only screen and (max-width: 767px) {
-	.container {
-		width: 300px;
-		text-align: center;
-	}
-	header {
-		height: 130px;
-	}
-	header a.addNoteLink {
-		top: 52px;
-		width: 100%;
-		right: 0;
-	}
-	.inputSearch {
-		right: 0px;
-		width: 100%;
-	}
-	.noteAddContainer {
-		width: 300px;
-		height: 550px;
-		margin-left: 0px;
-		margin-top: 20px;
-	}
-	.inputContainer {
-		height: 90px;
-	}
-	.inputContainer label {
-		height: auto;
-	}
-	.inputContainer input, .inputContainer textarea {
-		width: 230px;
-	}
-	.noteAddContainer .addFormContainer {
-		height: auto;
-	}
-	.inputContainer.desc {
-		height: 260px;
-	}
-	.tag-input-ctn {
-		width: 235px;
-		margin-top: 0px;
-	}
-	.inputContainer.tags .inputTag {
-		width: 225px;
-	}
-	.noteList {
-		margin-left: 0;
-	}
-	.noteList li {
-		width: 100%;
-		margin-left: 0;
-	}
+    .container {
+        width: 300px;
+        text-align: center;
+    }
+    header {
+        height: 130px;
+    }
+    header a.addNoteLink {
+        top: 52px;
+        width: 100%;
+        right: 0;
+    }
+    .inputSearch {
+        right: 0px;
+        width: 100%;
+    }
+    .noteAddContainer {
+        width: 300px;
+        height: 550px;
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+    .inputContainer {
+        height: 90px;
+    }
+    .inputContainer label {
+        height: auto;
+    }
+    .inputContainer input, .inputContainer textarea {
+        width: 230px;
+    }
+    .noteAddContainer .addFormContainer {
+        height: auto;
+    }
+    .inputContainer.desc {
+        height: 260px;
+    }
+    .tag-input-ctn {
+        width: 235px;
+        margin-top: 0px;
+    }
+    .inputContainer.tags .inputTag {
+        width: 225px;
+    }
+    .noteList {
+        margin-left: 0;
+    }
+    .noteList li {
+        width: 100%;
+        margin-left: 0;
+    }
 }
-
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-	.container {
-		width: 420px;
-	}
-	.noteAddContainer {
-		width: 400px;
-	}
-	.inputContainer input, .inputContainer textarea {
-		width: 330px;
-	}
-	.tag-input-ctn {
-		width: 335px;
-	}
-	.inputContainer.tags .inputTag {
-		width: 325px;
-	}
+    .container {
+        width: 420px;
+    }
+    .noteAddContainer {
+        width: 400px;
+    }
+    .inputContainer input, .inputContainer textarea {
+        width: 330px;
+    }
+    .tag-input-ctn {
+        width: 335px;
+    }
+    .inputContainer.tags .inputTag {
+        width: 325px;
+    }
 }
