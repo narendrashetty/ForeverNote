@@ -45,7 +45,7 @@ header a h1 {
 header a.addNoteLink {
 	color: #fff;
 	position: absolute;
-	right: 0;
+	right: 20px;
 	top: 12px;
 	text-decoration: none;
 	background-color: #3b99b5;
@@ -57,7 +57,7 @@ header a.addNoteLink {
 .inputSearch {
 	position: absolute;
 	top: -38px;
-	right: 110px;
+	right: 130px;
 	background-color: #464646;
 	border: 0;
 	height: 25px;
@@ -302,4 +302,82 @@ header a.addNoteLink {
 
 .tag-input-ctn .input-tag .delete-tag:hover {
 	background-color: #96b4d2;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	.container {
+		width: 768px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.container {
+		width: 300px;
+		text-align: center;
+	}
+	header {
+		height: 130px;
+	}
+	header a.addNoteLink {
+		top: 52px;
+		width: 100%;
+		right: 0;
+	}
+	.inputSearch {
+		right: 0px;
+		width: 100%;
+	}
+	.noteAddContainer {
+		width: 300px;
+		height: 550px;
+		margin-left: 0px;
+		margin-top: 20px;
+	}
+	.inputContainer {
+		height: 90px;
+	}
+	.inputContainer label {
+		height: auto;
+	}
+	.inputContainer input, .inputContainer textarea {
+		width: 230px;
+	}
+	.noteAddContainer .addFormContainer {
+		height: auto;
+	}
+	.inputContainer.desc {
+		height: 260px;
+	}
+	.tag-input-ctn {
+		width: 235px;
+		margin-top: 0px;
+	}
+	.inputContainer.tags .inputTag {
+		width: 225px;
+	}
+	.noteList {
+		margin-left: 0;
+	}
+	.noteList li {
+		width: 100%;
+		margin-left: 0;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.container {
+		width: 420px;
+	}
+	.noteAddContainer {
+		width: 400px;
+	}
+	.inputContainer input, .inputContainer textarea {
+		width: 330px;
+	}
+	.tag-input-ctn {
+		width: 335px;
+	}
+	.inputContainer.tags .inputTag {
+		width: 325px;
+	}
 }

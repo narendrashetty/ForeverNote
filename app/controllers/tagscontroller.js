@@ -19,5 +19,6 @@ ForeverNote.controller('TagsController', [
 			} else if (key != undefined) {
 				$scope.note.tags.splice(key, 1);
 			}
+			debugger
 		}
 	}]);

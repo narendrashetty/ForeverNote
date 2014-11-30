@@ -3,12 +3,17 @@ ForeverNote.directive('tagInput', function () {
 		restrict: 'A',
 		controller: 'TagsController',
 		link: function($scope, element, attrs) {
-			var maxWidth = 490;
+			var resize = function () {
+				var maxWidth = $('.tag-input-ctn').width() - 10,
+					width = maxWidth - $('.tagsAddedContainer').width();
+
+				$('.inputTag').css('width', width);
+			};
+
 			element.bind('keydown', function(e) {
 				if (e.which == 9) {
 					e.preventDefault();
 				}
-
 				if (e.which == 8) {
 					$scope.$apply(attrs.deleteTag);
 				}
@@ -21,9 +26,7 @@ ForeverNote.directive('tagInput', function () {
 					e.preventDefault();
 					if ($scope.tagText && $scope.tagText !== '') {
 						$scope.$apply(attrs.newTag);
-						var width = maxWidth - $('.tagsAddedContainer').width();
-						$('.inputTag').css('width', width);
-
+						resize();
 					}
 					return false;
 				}
