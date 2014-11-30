@@ -12,8 +12,7 @@
             </div>
             <div class="settingsContainer">
                 <a class="icon-edit-alt" ng-href="#/edit/{{note.id}}"></a>
-                <a class="icon-trash" ng-href="#/delete/{{note.id}}"></a>
-                <button ng-click='toggleModal()'>Open Modal Dialog</button>
+                <a class="icon-trash" ng-click="toggleModal(note.id)"></a>
             </div>
         </div>
     </li>
@@ -29,6 +28,6 @@
     </ul>
 </div>
 <modal-dialog show='modalShown' width='750px' height='60%'>
-    <p>Modal Content Goes here
-        <p>
+    <p class="title">Are you Sure, you wanna delete ?</p>
+    <a ng-href="#/delete/{{deleteNoteId}}" class="deleteNote">Delete</a>
 </modal-dialog>

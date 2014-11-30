@@ -383,32 +383,62 @@ footer .container a {
     text-decoration: none;
     border-bottom: 1px solid #CACACA;
 }
+.ng-modal-overlay {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.7;
+}
 .ng-modal-dialog {
     z-index: 10000;
-    position: absolute;
-    width: 50%;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     background-color: #fff;
-    box-shadow: 4px 4px 80px #000;
+    width: 440px;
+	height: 200px;
+	border: 12px solid #383838;
+	border-radius: 13px;
 }
 .ng-modal-dialog-content {
     padding: 10px;
     text-align: left;
 }
+.ng-modal-dialog-content .title {
+	font-weight: bold;
+	font-size: 20px;
+	margin-top: 40px;
+	margin-left: 50px;
+}
+.ng-modal-dialog-content .deleteNote {
+	color: #fff;
+	position: absolute;
+	right: 160px;
+	top: 92px;
+	text-decoration: none;
+	background-color: #B53B3B;
+	padding: 12px 20px;
+	font-size: 17px;
+	border-radius: 3px;
+	letter-spacing: 2px;
+}
 .ng-modal-close {
     position: absolute;
-    top: 3px;
+    top: -11px;
     right: 5px;
     padding: 5px;
     cursor: pointer;
     font-size: 120%;
     display: inline-block;
     font-weight: bold;
-    font-family: 'arial', 'sans-serif';
+    font-size: 32px;
 }
 @media only screen and (min-width: 768px) and (max-width: 959px) {
     .container {

@@ -40,7 +40,8 @@ ForeverNote.controller('NoteListController', [
         });
 
         $scope.modalShown = false;
-        $scope.toggleModal = function() {
+        $scope.toggleModal = function(noteId) {
+        	$scope.deleteNoteId = noteId;
             $scope.modalShown = !$scope.modalShown;
         };
     }
