@@ -1,6 +1,6 @@
 <input type="text" name="query" ng-model="query.title" class="inputSearch" placeholder="Search for notes" />
 <ul class="noteList">
-	<li ng-repeat="note in notes | filter:query">
+	<li ng-repeat="note in filtered = (notes | filter:query) | offset: currentPage*notesPerPage | limitTo: notesPerPage">
 		<div class="noteContainer">
 			<p class="title">{{ note.title }}</p>
 			<p class="description">{{ note.description }}</p>
@@ -17,3 +17,13 @@
 		</div>
 	</li>
 </ul>
+<div class="pagination">
+	<ul>
+	  <li ng-class="prevPageDisabled()">
+	    <a href ng-click="prevPage()">« Prev</a>
+	  </li>
+	  <li ng-class="nextPageDisabled()">
+	    <a href ng-click="nextPage()">Next »</a>
+	  </li>
+	</ul>
+</div>
