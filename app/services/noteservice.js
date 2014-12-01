@@ -1,7 +1,8 @@
+// A service to handle all data operations on localStorage
 ForeverNote.service('NoteService', function () {
 
 	return {
-
+		// contains all the notes available
 		allNotes: [],
 
 		// method to add a new note

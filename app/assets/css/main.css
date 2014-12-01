@@ -88,232 +88,173 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
-    background-color: #f3f7f8;
+    background-color: #fff;
 }
 input, textarea {
     font-family: 'Lato', sans-serif;
 }
-.container {
-    position: relative;
-    width: 960px;
-    margin: 0 auto;
-    padding: 0;
+
+.welcomeScreen h1 {
+    font-size: 40px;
+    font-weight: bold;
 }
-.hide {
+
+.welcomeScreen p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.form-error {
+    color: #BE0000;
+}
+
+.has-error {
     display: none;
 }
-header {
-    background-color: #202020;
-    height: 50px;
-    width: 100%;
-    color: #fff;
-    padding: 0px 20px;
-}
-header a h1 {
-    font-size: 20px;
-    display: inline-block;
-    line-height: 50px;
-    color: #fff;
-}
-header a.addNoteLink {
-    color: #fff;
-    position: absolute;
-    right: 20px;
-    top: 12px;
-    text-decoration: none;
-    background-color: #3b99b5;
-    padding: 4px 10px;
-    font-size: 12px;
-    border-radius: 3px;
-}
-.inputSearch {
-    position: absolute;
-    top: -38px;
-    right: 130px;
-    background-color: #464646;
-    border: 0;
-    height: 25px;
-    color: #696969;
-    border-radius: 2px;
-    padding-left: 10px;
-    outline: 0;
-}
-.noteWrapper {
-    text-align: center;
-    margin-bottom: 91px;
-}
-.noteList {
-    list-style-type: none;
-    margin-left: -26px;
-}
-.noteList li, .noteAddContainer {
-    display: inline-block;
-    background-color: #fff;
-    margin-top: 26px;
-    box-shadow: 1px 0px 4px #9E9E9E;
-    border-radius: 4px;
-    min-height: 180px;
-    padding: 14px 10px;
-    vertical-align: top;
-    margin-bottom: 20px;
-    margin-left: 26px;
-    width: 250px;
-}
-.noteAddContainer {
-    width: 750px;
-    margin-top: 100px;
-    height: 400px;
-    text-align: left;
-    padding-left: 14px;
-    padding-right: 14px;
-}
-.noteAddContainer .title {
-    font-size: 20px;
-    font-weight: bold;
-}
-.noteAddContainer .addFormContainer {
-    border: 1px solid #D5D5D5;
-    border-radius: 4px;
-    height: 300px;
-    margin-top: 10px;
-}
-.inputContainer {
-    border-bottom: 1px solid #D5D5D5;
-    height: 50px;
-    padding: 0px 20px;
-    color: #515151;
-}
-.inputContainer:nth-child(even) {
-    background-color: #f2f2f2;
-}
-.inputContainer.desc {
-    height: 200px;
-    padding: 10px 20px;
-}
-.desc label {
-    vertical-align: top;
-}
-.inputContainer.tags label {
-    vertical-align: top;
-}
-.inputContainer.tags .inputTag {
-    width: 490px;
-}
-.inputContainer label {
-    text-transform: uppercase;
-    font-weight: bold;
-    width: 160px;
-    display: inline-block;
-    height: 100%;
-    line-height: 50px;
-}
-.inputContainer input, .inputContainer textarea {
-    border: 1px solid #D5D5D5;
-    height: 30px;
-    width: 500px;
-    font-size: 18px;
-}
-.inputContainer textarea {
-    height: 173px;
-}
-.buttonContainer {
-    text-align: right;
-    height: 50px;
-    padding-top: 10px;
-    margin-right: -4px;
-}
-.buttonContainer button {
-    color: #fff;
-    text-decoration: none;
-    background-color: #3b99b5;
-    padding: 7px 26px;
-    font-size: 14px;
-    border-radius: 3px;
-    border: none;
-    margin: 0 4px;
-    cursor: pointer;
-}
-.buttonContainer button:hover {
-    background-color: #286577;
-}
-.noteList li .noteContainer {
-    position: relative;
-    text-align: left;
-}
-.noteList li .noteContainer .title {
-    font-weight: bold;
-    font-size: 16px;
-}
-.noteList li .noteContainer .description {
-    color: #8b95ad;
-    margin-top: 4px;
-}
-.noteList li .noteContainer .tagContainer {
-    margin-top: 10px;
-}
-.noteList li .noteContainer .tagContainer .tag {
-    background: #767676;
-    font-size: 10px;
-    padding: 3px 8px;
-    margin-right: 1px;
-    border-radius: 10px;
-    color: #fff;
-}
-.noteList li .noteContainer .bandContainer {
-    position: relative;
-    margin-top: 18px;
-    height: 4px;
-}
-.noteList li .noteContainer .bandContainer .band {
-    height: 4px;
-    background: #2094b8;
-    border-radius: 6px;
-    width: 90px;
-    position: absolute;
-}
-.noteList li .noteContainer .bandContainer .band:after {
-    content: " ";
-    background: #ed8c39;
-    border-radius: 6px;
-    width: 70px;
-    height: 4px;
-    position: absolute;
-    top: 0;
-    left: 87px;
-}
-.noteList li .noteContainer .bandContainer .band:before {
-    content: " ";
-    background: #7ec479;
-    border-radius: 6px;
-    width: 76px;
-    height: 4px;
-    position: absolute;
-    top: 0;
-    left: 154px;
-}
-.noteList li .noteContainer .settingsContainer {
+
+.column {
+    float: left;
     display: inline;
-    float: right;
-    margin-top: 5px;
 }
-.noteList li .noteContainer .settingsContainer a {
-    color: #777777;
+
+.hide {
+    display: none !important;
 }
-.noteList li .noteContainer .settingsContainer a:hover {
-    color: #000;
+
+.fluid-container {
+    width: 100%;
+    height: 100%;
 }
-.tag-input-ctn {
-    border: 1px solid #D5D5D5;
-    display: inline-block;
-    width: 500px;
+
+.noteBrowser {
+    width: 250px;
+    height: 100%;
+    background-color: #F7F7F7;
+    position: fixed;
+    z-index: 1;
+}
+
+.ForeverNoteTitle {
+    background-color: #3C3C3C;
+    height: 40px;
+    text-transform: uppercase;
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 16px;
+    position: relative;
+}
+
+.ForeverNoteTitle a {
+    color: #D3D3D3;
+    text-decoration: none;
+}
+
+.addIcon {
+    background-color: #7FC479;
+    color: #7FC479;
+    display: inline;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 40px;
+    width: 40px;
+}
+
+.addIcon span {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 4px auto;
+}
+
+.addIcon span i {
+    color: #7FC479;
+    position: absolute;
+    top: 8px;
+    left: 9px;
+}
+
+.noteViewer i {
+    position: relative;
+    top: 66px;
+    left: -24px;
+}
+
+.noteListContainer {
+    height: -webkit-calc(100% - 40px); 
+    height:    -moz-calc(100% - 40px); 
+    height:      -o-calc(100% - 40px);
+}
+
+ul.noteList {
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+
+.note {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #E1E1E1;
+}
+
+.note.active {
+    background-color: #EEEDED;
+}
+
+.note:hover {
+    background-color: #EEEDED;
+}
+
+.note .title {
+    font-weight: bold;
+}
+
+.note .description {
+    margin-top: 4px;
+    height: 40px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.noteViewer {
+    margin-left: 250px;
+    padding: 70px 80px 0px;
+    margin-bottom: 80px;
+}
+
+.noteViewer .title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.noteViewer .description {
     margin-top: 10px;
+    line-height: 24px;
+    white-space: pre-wrap;
+}
+
+.tag-input-ctn {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+}
+.tag-input-ctn i {
+    position: absolute;
+    left: -24px;
+    top: 3px;
 }
 .tag-input-ctn input {
     display: inline-block;
     float: left;
     height: 24px;
     padding-left: 10px;
-    font-size: 18px;
+    font-size: 12px;
     color: black;
     border: 0px;
     margin: 2px;
@@ -322,16 +263,26 @@ header a.addNoteLink {
     outline: 0;
     box-shadow: 0px;
 }
-.tag-input-ctn .input-tag {
-    padding: 2px 4px;
+.tag-input-ctn .input-tag, .tagContainer .noteTag {
     line-height: 12px;
-    font-size: 11px;
-    background-color: #e3eaf6;
+    font-size: 12px;
+    background-color: #80C0C5;
     display: inline-block;
     float: left;
     border-radius: 2px;
     margin: 2px 5px 2px 0px;
-    border: 1px solid #a9b6d2;
+    border-radius: 10px;
+    color: #fff;
+    padding: 3px 4px 3px 6px;
+    position: relative;
+}
+
+.tagContainer {
+    margin-top: 40px;
+}
+
+.tagContainer .noteTag {
+    padding: 5px 8px;
 }
 .tag-input-ctn .input-tag .delete-tag {
     display: inline-block;
@@ -342,47 +293,108 @@ header a.addNoteLink {
 .tag-input-ctn .input-tag .delete-tag:hover {
     background-color: #96b4d2;
 }
-.pagination {
-    margin-top: 50px;
+
+input, input:focus, textarea    , textarea:focus {
+    border: 0;
+    outline: 0;
 }
-.pagination ul {
-    list-style-type: none;
+
+.inputContainer input#title {
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
 }
-.pagination ul li {
-    display: inline-block;
-    background-color: #8C8C8C;
-    border-radius: 50%;
-    padding: 10px;
+
+.inputContainer textarea {
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
     font-size: 14px;
-    margin: 0 10px;
+    line-height: 24px;
 }
-.pagination ul li.disabled {
-    background-color: #D2D2D2;
+
+.inputContainer input#title::-webkit-input-placeholder, .inputContainer textarea::-webkit-input-placeholder {
+   color: #ccc;
 }
-.pagination ul li.disabled a {
-    cursor: default;
+
+.inputContainer input#title:-moz-placeholder, .inputContainer textarea:-moz-placeholder { /* Firefox 18- */
+   color: #ccc;
 }
-.pagination ul li a {
+
+.inputContainer input#title::-moz-placeholder, .inputContainer textarea::-moz-placeholder {  /* Firefox 19+ */
+   color: #ccc;
+}
+
+.inputContainer input#title:-ms-input-placeholder, .inputContainer textarea:-ms-input-placeholder {  
+   color: #ccc;
+}
+
+.buttonContainer {
+    text-align: left;
+    height: 50px;
+    padding-top: 10px;
+    margin-right: -4px;
+}
+.buttonContainer button, .addBtn {
     color: #fff;
     text-decoration: none;
+    background-color: #7FC479;
+    padding: 5px 24px;
+    font-size: 12px;
+    border-radius: 3px;
+    border: none;
+    margin: 0 4px;
+    cursor: pointer;
+    margin-right: 16px;
 }
-footer {
-    border-top: 1px solid #CACACA;
-    background-color: #E5E5E5;
-    position: absolute;
+
+.addBtnContainer {
     width: 100%;
-    top: 100%;
-    margin-top: -61px;
-}
-footer .container {
-    padding: 10px;
     text-align: center;
+    margin-top: 30px;
 }
-footer .container a {
-    color: #000;
+
+.addBtn {
+    padding: 8px 34px;
+    font-size: 14px;
+}
+
+.cancelBtn {
     text-decoration: none;
-    border-bottom: 1px solid #CACACA;
+    color: #6F6F6F;
 }
+
+.cancelBtn:hover {
+    border-bottom: 1px solid #000;
+}
+
+.cancelDelete {
+    position: absolute;
+    right: 144px;
+    top: 105px;
+    border-bottom: 1px solid #000;
+}
+
+.noteControls {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.noteControls a {
+    text-decoration: none;    
+    border-bottom: 1px solid #333;
+}
+
+.noteControls a.editLink {
+    color: #333;
+    margin-right: 20px;
+}
+
+.noteControls a.deleteLink {
+    color: #dd0017;
+    border-color: #dd0017;
+}
+
 .ng-modal-overlay {
     position: fixed;
     z-index: 9999;
@@ -403,31 +415,31 @@ footer .container a {
     -moz-transform: translate(-50%, -50%);
     background-color: #fff;
     width: 440px;
-	height: 200px;
-	border: 12px solid #383838;
-	border-radius: 13px;
+    height: 200px;
+    border: 12px solid #383838;
+    border-radius: 13px;
 }
 .ng-modal-dialog-content {
     padding: 10px;
     text-align: left;
 }
 .ng-modal-dialog-content .title {
-	font-weight: bold;
-	font-size: 20px;
-	margin-top: 40px;
-	margin-left: 50px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-left: 50px;
 }
 .ng-modal-dialog-content .deleteNote {
-	color: #fff;
-	position: absolute;
-	right: 160px;
-	top: 92px;
-	text-decoration: none;
-	background-color: #B53B3B;
-	padding: 12px 20px;
-	font-size: 17px;
-	border-radius: 3px;
-	letter-spacing: 2px;
+    color: #fff;
+    position: absolute;
+    right: 200px;
+    top: 92px;
+    text-decoration: none;
+    background-color: #B53B3B;
+    padding: 12px 20px;
+    font-size: 17px;
+    border-radius: 3px;
+    letter-spacing: 2px;
 }
 .ng-modal-close {
     position: absolute;
@@ -440,78 +452,119 @@ footer .container a {
     font-weight: bold;
     font-size: 32px;
 }
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-    .container {
-        width: 768px;
-    }
+
+.noteViewer, .noteBrowser, .hamburgerContainer {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
+
+footer {
+    border-top: 1px solid #F5F5F5;
+    position: absolute;
+    background-color: #fff;
+    width: -webkit-calc(100% - 250px);
+    width: -moz-calc(100% - 250px);
+    width: calc(100% - 250px);
+    top: 100%;
+    margin-top: -61px;
+    margin-left: 250px;
+}
+footer .container {
+    padding: 10px;
+    text-align: center;
+}
+footer .container a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #CACACA;
+}
+
+
 @media only screen and (max-width: 767px) {
-    .container {
-        width: 300px;
-        text-align: center;
-    }
-    header {
-        height: 130px;
-    }
-    header a.addNoteLink {
-        top: 52px;
-        width: 100%;
-        right: 0;
-    }
-    .inputSearch {
-        right: 0px;
-        width: 100%;
-    }
-    .noteAddContainer {
-        width: 300px;
-        height: 550px;
+
+    .noteViewer {
         margin-left: 0px;
-        margin-top: 20px;
+        padding: 20px 40px 0px;
     }
-    .inputContainer {
-        height: 90px;
+
+    .noteBrowser {
+        left: -250px;
     }
-    .inputContainer label {
-        height: auto;
+
+    .noteViewer.moveRight {
+        margin-left: 250px;
+        opacity: 0;
     }
-    .inputContainer input, .inputContainer textarea {
-        width: 230px;
+
+    .noteBrowser.moveRight {
+        left: 0px;
     }
-    .noteAddContainer .addFormContainer {
-        height: auto;
+
+    .hamburgerContainer {
+        background-color: #7FC479;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        cursor: pointer;
     }
-    .inputContainer.desc {
-        height: 260px;
+
+    .hamburgerContainer.moveRight {
+        margin-left: 250px;        
     }
-    .tag-input-ctn {
-        width: 235px;
-        margin-top: 0px;
+
+    .hamburger {
+        width: 22px;
+        position: absolute;
+        left: 10px;
+        border-top: 2px solid #fff;
+        cursor: pointer;
+        z-index: 1;
+        top: 13px;
     }
-    .inputContainer.tags .inputTag {
-        width: 225px;
+    .hamburger:after {
+        content: "";
+        display: block;
+        border-top: 2px solid #fff;
+        margin-top: 4px;
     }
-    .noteList {
-        margin-left: 0;
+    .hamburger:before {
+        content: "";
+        display: block;
+        border-top: 2px solid #fff;
+        margin-top: 4px;
     }
-    .noteList li {
+
+    .inputContainer.tags {
+        display: none;
+    }
+    .inputContainer input#title {
+        font-size: 16px;
+    }
+
+    footer {
+        margin-left: 0px;
         width: 100%;
-        margin-left: 0;
     }
 }
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-    .container {
-        width: 420px;
-    }
-    .noteAddContainer {
-        width: 400px;
-    }
-    .inputContainer input, .inputContainer textarea {
-        width: 330px;
-    }
-    .tag-input-ctn {
-        width: 335px;
-    }
-    .inputContainer.tags .inputTag {
-        width: 325px;
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

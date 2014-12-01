@@ -6,27 +6,22 @@
 	<title>ForeverNote</title>
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="app/assets/css/fontello.css">
-	<!-- <link rel="stylesheet" href="app/assets/css/main.css"> -->
-	<link rel="stylesheet" href="app/assets/css/newmain.css">
+	<link rel="stylesheet" href="app/assets/css/main.css">
 </head>
 
 <body ng-app="ForeverNote">
-	<!-- <header ng-include="'app/views/header.html'"></header> -->
-
-	<!-- <div class="container noteWrapper">
-		<div ng-view></div>
-	</div>
-	
-	<footer ng-include="'app/views/footer.html'"></footer> -->
-
 	<div class="fluid-container">
+		<!-- include the left nav which is used to browse all notes -->
 		<div class="noteBrowser" id="noteBrowser" ng-controller="NoteListController" ng-include="'app/views/notebrowser.html'"></div>
+		<!-- hamburger icon for mobile / tablet view -->
 		<div class="hamburgerContainer">
 			<div class="hamburger"></div>
 		</div>
+		<!-- A anote viewing section where a selected note could be seen in detail -->
 		<div class="noteViewer">
 			<ng:view></ng:view>
 		</div>
+		<!-- include a footer -->
 		<footer ng-include="'app/views/footer.html'"></footer>
 	</div>
 

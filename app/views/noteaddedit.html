@@ -1,11 +1,12 @@
 
 <form onSubmit="return false" name="noteForm" novalidate ng-submit="submitForm(noteForm.$valid)">
 	<div class="inputContainer">
-		<input type="text" id="title" name="title" ng-model="note.title" placeholder="Add your title here" required ng-class="{ 'has-error' : !noteForm.title.$dirty && noteForm.title.$invalid }">
+		<span ng-class="{ 'has-error' : noteForm.title.$dirty && !noteForm.title.$invalid }" class="form-error">Title is required</span>
+		<input type="text" id="title" name="title" ng-model="note.title" placeholder="Add your title here" required autocomplete="off">
 	</div>
 
 	<div class="inputContainer desc">
-		<textarea id="body" ng-model="note.description" rows="3" placeholder="This is where you start typing" required ng-class="{ 'has-error' : !noteForm.description.$dirty && noteForm.description.$invalid }" name="description"></textarea>
+		<textarea id="body" ng-model="note.description" rows="3" placeholder="This is where you start typing" name="description"></textarea>
 	</div>
 
 	<div class="inputContainer tags">		

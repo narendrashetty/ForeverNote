@@ -1,3 +1,4 @@
+// A directive for tags
 ForeverNote.directive('tagInput', function () {
 	return {
 		restrict: 'A',

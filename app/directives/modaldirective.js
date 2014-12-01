@@ -1,3 +1,4 @@
+// A directive for modal
 ForeverNote.directive('modalDialog', function() {
     return {
         restrict: 'E',
