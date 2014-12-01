@@ -1,7 +1,7 @@
 <div class="ForeverNoteTitle">
 	<p>ForeverNote</p>
-	<a class="addIcon" ng-href="#/add/">
-		<span></span>
+	<a class="addIcon" ng-href="#/add/" ng:class="{true:'hide', false:''}[notes.length===0]">
+		<span><i class="icon-plus"></i></span>
 	</a>
 </div>
 <div class="addBtnContainer" ng:class="{true:'', false:'hide'}[notes.length===0]">

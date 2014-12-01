@@ -110,7 +110,7 @@ input, textarea {
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .fluid-container {
@@ -155,6 +155,12 @@ input, textarea {
     height: 30px;
     display: block;
     margin: 4px auto;
+}
+
+.addIcon span i {
+    position: absolute;
+    top: 8px;
+    left: 9px;
 }
 
 .noteListContainer {
@@ -215,6 +221,12 @@ ul.noteList {
     display: inline-block;
     width: 100%;
     margin-top: 10px;
+    position: relative;
+}
+.tag-input-ctn i {
+    position: absolute;
+    left: -24px;
+    top: 3px;
 }
 .tag-input-ctn input {
     display: inline-block;
