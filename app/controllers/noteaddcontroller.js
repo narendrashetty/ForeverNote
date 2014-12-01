@@ -15,4 +15,11 @@ ForeverNote.controller('NoteAddController', [
 		$scope.cancel = function () {
 			$location.path('/');
 		};
+		$scope.submitForm = function(isValid) {
+			// check to make sure the form is completely valid
+			if (isValid) { 
+				$scope.save();
+			}
+
+		};
 	}]);

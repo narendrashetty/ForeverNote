@@ -104,6 +104,10 @@ input, textarea {
     font-weight: bold;
 }
 
+.has-error {
+    border-top: 1px solid #FFD2D2;
+}
+
 .column {
     float: left;
     display: inline;
