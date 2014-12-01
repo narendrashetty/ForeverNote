@@ -132,13 +132,17 @@ input, textarea {
 .ForeverNoteTitle {
     background-color: #3C3C3C;
     height: 40px;
-    color: #D3D3D3;
     text-transform: uppercase;
     padding: 10px;
     font-weight: bold;
     letter-spacing: 1px;
     font-size: 16px;
     position: relative;
+}
+
+.ForeverNoteTitle a {
+    color: #D3D3D3;
+    text-decoration: none;
 }
 
 .addIcon {
@@ -162,9 +166,16 @@ input, textarea {
 }
 
 .addIcon span i {
+    color: #7FC479;
     position: absolute;
     top: 8px;
     left: 9px;
+}
+
+.noteViewer i {
+    position: relative;
+    top: 66px;
+    left: -24px;
 }
 
 .noteListContainer {
@@ -257,6 +268,7 @@ ul.noteList {
     border-radius: 10px;
     color: #fff;
     padding: 3px 4px 3px 6px;
+    position: relative;
 }
 
 .tagContainer {
@@ -291,7 +303,8 @@ input, input:focus, textarea    , textarea:focus {
     width: 100%;
     height: 300px;
     margin-top: 30px;
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 24px;
 }
 
 .inputContainer input#title::-webkit-input-placeholder, .inputContainer textarea::-webkit-input-placeholder {
@@ -358,6 +371,7 @@ input, input:focus, textarea    , textarea:focus {
 
 .noteControls {
     text-align: right;
+    margin-bottom: 10px;
 }
 
 .noteControls a {
@@ -442,7 +456,7 @@ input, input:focus, textarea    , textarea:focus {
 
     .noteViewer {
         margin-left: 0px;
-        padding-top: 60px;
+        padding-top: 20px;
     }
 
     .noteBrowser {
@@ -490,6 +504,13 @@ input, input:focus, textarea    , textarea:focus {
         display: block;
         border-top: 2px solid #fff;
         margin-top: 4px;
+    }
+
+    .inputContainer.tags {
+        display: none;
+    }
+    .inputContainer input#title {
+        font-size: 16px;
     }
 }
 

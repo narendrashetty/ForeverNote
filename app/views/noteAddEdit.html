@@ -8,8 +8,9 @@
 		<textarea id="body" ng-model="note.description" rows="3" placeholder="This is where you start typing" required ng-class="{ 'has-error' : !noteForm.description.$dirty && noteForm.description.$invalid }" name="description"></textarea>
 	</div>
 
-	<div class="inputContainer tags">
+	<div class="inputContainer tags">		
 		<div class="tag-input-ctn">
+			<i class="icon-tags"></i>
 			<div class="tagsAddedContainer" style="display:inline-block;float:left;">
 				<div ng-repeat="(key, tag) in note.tags" class="input-tag">
 					{{ tag.name }}

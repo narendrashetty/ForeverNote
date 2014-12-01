@@ -15,6 +15,7 @@
 </div>
 <p class="title"> {{ selectedNote.title }}</p>
 <p class="description">{{ selectedNote.description }}</p>
+<i class="icon-tags" ng:class="{true:'', false:'hide'}[selectedNote.tags.length > 0]"></i>
 <div class="tagContainer">
     <span class="noteTag" ng-repeat="tag in selectedNote.tags">{{ tag.name }}</span>
 </div>

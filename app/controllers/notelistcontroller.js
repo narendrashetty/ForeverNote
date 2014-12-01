@@ -1,8 +1,9 @@
 ForeverNote.controller('NoteListController', [
     '$scope',
     '$location',
+    '$routeParams',
     'NoteService',
-    function($scope, $location, NoteService) {
+    function($scope, $location, $routeParams, NoteService) {
         NoteService.getAllNotes();
         $scope.displayNote = function (noteId) {
             $scope.selectedNoteId = noteId;

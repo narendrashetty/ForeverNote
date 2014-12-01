@@ -8,15 +8,15 @@ ForeverNote.config(['$routeProvider', function ($routeProvider) {
 			controller: 'NoteViewerController'
 		})
 		.when('/add', {
-			templateUrl: 'app/views/noteAddEdit.html',
+			templateUrl: 'app/views/noteaddedit.html',
 			controller: 'NoteAddController'
 		})
 		.when('/edit/:noteId', {
-			templateUrl: 'app/views/noteAddEdit.html',
+			templateUrl: 'app/views/noteaddedit.html',
 			controller: 'NoteEditController'
 		})
 		.when('/delete/:noteId', {
-			templateUrl: 'app/views/noteList.html',
+			templateUrl: 'app/views/notelist.html',
 			controller: 'NoteDeleteController'
 		});
 }]);
