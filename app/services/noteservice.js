@@ -1,6 +1,9 @@
 ForeverNote.service('NoteService', function () {
 
 	return {
+
+		allNotes: [],
+
 		// method to add a new note
 		addNote: function (note) {
 			var id = 0,
@@ -14,14 +17,17 @@ ForeverNote.service('NoteService', function () {
 			note.id = ++id;
 			localStorage['ForeverNote_' +id] = JSON.stringify(note);
 			return id;
+			this.getAllNotes();
 		},
 		// method to delete a note
 		deleteNote: function (id) {
-			localStorage.removeItem('ForeverNote_'+id);
+			localStorage.removeItem('ForeverNote_'+id);			
+			this.getAllNotes();
 		},
 		// method to edit a particular note
 		editNote: function (id, note) {
 			localStorage['ForeverNote_' +id] = JSON.stringify(note);
+			this.getAllNotes();
 		},
 		// method to get a particular note
 		getNote: function (id) {
@@ -38,7 +44,7 @@ ForeverNote.service('NoteService', function () {
 					notes.push(JSON.parse(localStorage[note]));
 				}
 			}
-			return notes;
+			this.allNotes = notes;
 		}
 	}
 });

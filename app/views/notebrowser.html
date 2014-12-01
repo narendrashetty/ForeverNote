@@ -4,6 +4,9 @@
 		<span></span>
 	</a>
 </div>
+<div class="addBtnContainer" ng:class="{true:'', false:'hide'}[notes.length===0]">
+	<a href ng-href="/#/add" class="addBtn">Create new note</a>
+</div>
 <div class="noteListContainer">
 	<ul class="noteList">
 		<li class="note" ng-repeat="note in notes" ng-click="displayNote(note.id)" ng:class="{true:'active', false:''}[selectedNoteId===note.id]">

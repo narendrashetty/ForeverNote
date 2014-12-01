@@ -1,8 +1,17 @@
 
 <div class="noteControls" ng:class="{true:'', false:'hide'}[selectedNote]">
-
     <a href ng-href="#/edit/{{selectedNote.id}}" class="editLink">Edit</a>
     <a href class="deleteLink" ng-click="toggleModal(selectedNote.id)">Delete</a>
+</div>
+
+<div class="welcomeScreen" ng:class="{true:'hide', false:''}[noteId]">
+    <h1>Welcome to ForeverNote!</h1>
+    <p>Click on any note to view in detail</p>
+</div>
+
+<div class="welcomeScreen" ng:class="{true:'hide', false:''}[notesAvailable>0]">
+    <h1>Welcome to ForeverNote!</h1>
+    <p>To begin, click new note</p>
 </div>
 <p class="title"> {{ selectedNote.title }}</p>
 <p class="description">{{ selectedNote.description }}</p>
@@ -10,37 +19,6 @@
     <span class="noteTag" ng-repeat="tag in selectedNote.tags">{{ tag.name }}</span>
 </div>
 
-
-<!-- 
-<input type="text" name="query" ng-model="query.title" class="inputSearch" ng:class="{true:'hide', false:''}[filtered.length==0]" placeholder="Search for notes" />
-<ul class="noteList">
-    <li ng-repeat="note in filtered = (notes | filter:query) | offset: currentPage*notesPerPage | limitTo: notesPerPage">
-        <div class="noteContainer">
-            <p class="title">{{ note.title }}</p>
-            <p class="description">{{ note.description }}</p>
-            <div class="tagContainer">
-                <span class="tag" ng-repeat="tag in note.tags">{{ tag.name }}</span>
-            </div>
-            <div class="bandContainer">
-                <div class="band"></div>
-            </div>
-            <div class="settingsContainer">
-                <a class="icon-edit-alt" ng-href="#/edit/{{note.id}}"></a>
-                <a class="icon-trash" ng-click="toggleModal(note.id)"></a>
-            </div>
-        </div>
-    </li>
-</ul>
-<div class="pagination" ng:class="{true:'hide', false:''}[filtered.length==0]">
-    <ul>
-        <li ng-class="prevPageDisabled()">
-            <a class="icon-left-open" href ng-click="prevPage()"></a>
-        </li>
-        <li ng-class="nextPageDisabled()">
-            <a class="icon-right-open" href ng-click="nextPage()"></a>
-        </li>
-    </ul>
-</div> -->
 <modal-dialog show='modalShown' width='750px' height='60%'>
     <p class="title">Are you Sure, you wanna delete ?</p>
     <a ng-href="#/delete/{{deleteNoteId}}" class="deleteNote">Delete</a>
