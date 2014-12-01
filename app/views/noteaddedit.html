@@ -1,0 +1,27 @@
+
+<form onSubmit="return false" name="noteForm" novalidate ng-submit="submitForm(noteForm.$valid)">
+	<div class="inputContainer">
+		<input type="text" id="title" name="title" ng-model="note.title" placeholder="Add your title here" required ng-class="{ 'has-error' : !noteForm.title.$dirty && noteForm.title.$invalid }">
+	</div>
+
+	<div class="inputContainer desc">
+		<textarea id="body" ng-model="note.description" rows="3" placeholder="This is where you start typing" required ng-class="{ 'has-error' : !noteForm.description.$dirty && noteForm.description.$invalid }" name="description"></textarea>
+	</div>
+
+	<div class="inputContainer tags">		
+		<div class="tag-input-ctn">
+			<i class="icon-tags"></i>
+			<div class="tagsAddedContainer" style="display:inline-block;float:left;">
+				<div ng-repeat="(key, tag) in note.tags" class="input-tag">
+					{{ tag.name }}
+					<div class="delete-tag" ng-click="deleteTag(key)">&times;</div>
+				</div>
+			</div>
+			<input type="text" tag-input="" ng-model="tagText" placeholder="Type and press Tab to add Tags" class="inputTag" new-tag="addTag()" delete-tag="deleteTag()" >
+		</div>
+	</div>
+	<div class="buttonContainer">
+		<button type="submit">Save note</button>
+		<a class="cancelBtn" href ng:click="cancel()">Cancel</a>
+	</div>
+</form>
