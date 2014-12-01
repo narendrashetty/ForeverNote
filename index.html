@@ -20,7 +20,10 @@
 	<footer ng-include="'app/views/footer.html'"></footer> -->
 
 	<div class="fluid-container">
-		<div class="noteBrowser" ng-controller="NoteListController" ng-include="'app/views/notebrowser.html'"></div>
+		<div class="noteBrowser" id="noteBrowser" ng-controller="NoteListController" ng-include="'app/views/notebrowser.html'"></div>
+		<div class="hamburgerContainer">
+			<div class="hamburger"></div>
+		</div>
 		<div class="noteViewer">
 			<ng:view></ng:view>
 		</div>
@@ -30,6 +33,7 @@
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script src="app/app.js"></script>
+	<script src="app/nav.js"></script>
 	<script src="app/services/noteservice.js"></script>
 	<script src="app/controllers/notelistcontroller.js"></script>
 	<script src="app/controllers/noteviewercontroller.js"></script>

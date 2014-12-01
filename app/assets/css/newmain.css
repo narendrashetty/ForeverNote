@@ -416,6 +416,66 @@ input, input:focus, textarea    , textarea:focus {
     font-size: 32px;
 }
 
+.noteViewer, .noteBrowser, .hamburgerContainer {
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+@media only screen and (max-width: 767px) {
+
+    .noteViewer {
+        margin-left: 0px;
+        padding-top: 60px;
+    }
+
+    .noteBrowser {
+        left: -250px;
+    }
+
+    .noteViewer.moveRight {
+        margin-left: 250px;
+        opacity: 0;
+    }
+
+    .noteBrowser.moveRight {
+        left: 0px;
+    }
+
+    .hamburgerContainer {
+        background-color: #7FC479;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        /*display: none;*/
+    }
+
+    .hamburgerContainer.moveRight {
+        margin-left: 250px;        
+    }
+
+    .hamburger {
+        width: 22px;
+        position: absolute;
+        left: 10px;
+        border-top: 2px solid #fff;
+        cursor: pointer;
+        z-index: 1;
+        top: 13px;
+    }
+    .hamburger:after {
+        content: "";
+        display: block;
+        border-top: 2px solid #fff;
+        margin-top: 4px;
+    }
+    .hamburger:before {
+        content: "";
+        display: block;
+        border-top: 2px solid #fff;
+        margin-top: 4px;
+    }
+}
 
 
 
