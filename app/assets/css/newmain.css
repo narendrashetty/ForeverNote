@@ -219,6 +219,7 @@ ul.noteList {
 .noteViewer {
     margin-left: 250px;
     padding: 70px 80px 0px;
+    margin-bottom: 80px;
 }
 
 .noteViewer .title {
@@ -512,6 +513,27 @@ input, input:focus, textarea    , textarea:focus {
     .inputContainer input#title {
         font-size: 16px;
     }
+}
+
+footer {
+    border-top: 1px solid #F5F5F5;
+    position: absolute;
+    background-color: #fff;
+    width: -webkit-calc(100% - 250px);
+    width: -moz-calc(100% - 250px);
+    width: calc(100% - 250px);
+    top: 100%;
+    margin-top: -61px;
+    margin-left: 250px;
+}
+footer .container {
+    padding: 10px;
+    text-align: center;
+}
+footer .container a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #CACACA;
 }
 
 

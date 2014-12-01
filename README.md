@@ -1,4 +1,4 @@
 ForeverNote
 ===========
 
-ForeverNote is a single page notes/TODO application
+A lightweight Notes recording appication build using Angularjs
